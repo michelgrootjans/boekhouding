@@ -15,7 +15,7 @@ feature 'Beheer uitgaande fakturen:' do
     ontvanger = Faker::Company.name
     fill_in 'Ontvanger', with: ontvanger
     fill_in 'Bedrag',    with: 2100
-    click_button 'Creer factuur'
+    click_button 'Create Factuur'
 
     page.should have_text ontvanger
     page.should have_text 2100

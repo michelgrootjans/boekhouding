@@ -8,6 +8,7 @@ class FacturenController < ApplicationController
   end
 
   def new
+    @factuur = Factuur.new
   end
 
   def create

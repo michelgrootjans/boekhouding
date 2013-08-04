@@ -1,7 +1,7 @@
 <h1>Uitgaande facturen</h1>
 
 <div>
-  <%= @facturen.each do |factuur| %>
+  <% @facturen.each do |factuur| %>
     <%= "#{factuur.ontvanger}: #{factuur.bedrag}" %>
   <% end %>
 </div>
