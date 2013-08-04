@@ -2,14 +2,22 @@ require 'spec_helper'
 
 feature 'Beheer uitgaande fakturen:' do
   scenario 'Maak een nieuwe factuur aan' do
-    visit '/uitgaande_facturen'
+    facturen = FactoryGirl.create_list(:factuur, 3)
+
+    visit '/facturen'
+    facturen.each do |factuur|
+      page.should have_text factuur.ontvanger
+      page.should have_text factuur.bedrag
+    end
+
     click_link 'Nieuwe factuur ...'
 
-    fill_in 'Ontvanger', with: 'M2Q'
-    fill_in 'Bedrag',    with: 1000
+    ontvanger = Faker::Company.name
+    fill_in 'Ontvanger', with: ontvanger
+    fill_in 'Bedrag',    with: 2100
     click_button 'Creer factuur'
 
-    page.should have_text 'M2Q'
-    page.should have_text '1000'
+    page.should have_text ontvanger
+    page.should have_text 2100
   end
 end

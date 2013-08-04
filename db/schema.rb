@@ -11,6 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20130804163149) do
+
+  create_table "facturen", force: true do |t|
+    t.string   "ontvanger"
+    t.decimal  "bedrag"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
