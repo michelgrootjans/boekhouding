@@ -1,23 +1,17 @@
-development:
-  adapter: postgresql
-  encoding: unicode
-  database: boekhouding_development
-  pool: 5
+postgres: &postgres
+  adapter:  postgresql
+  host:     localhost
   username: boekhouding
-  password:
+  password: boekhouding
+
+development:
+  <<: *postgres
+  database: boekhouding_development
 
 test:
-  adapter: postgresql
-  encoding: unicode
+  <<: *postgres
   database: boekhouding_test
-  pool: 5
-  username: boekhouding
-  password:
 
 production:
-  adapter: postgresql
-  encoding: unicode
+  <<: *postgres
   database: boekhouding_production
-  pool: 5
-  username: boekhouding
-  password:

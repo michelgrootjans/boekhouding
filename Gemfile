@@ -13,12 +13,21 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 group :production do
-	gem 'rails_12factor'
+  gem 'rails_12factor'
 end
 
 group :development, :test do
-	gem 'rspec-rails'
-	gem 'capybara'
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'rspec'
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'autotest-standalone'
+  gem 'autotest-growl'
 end
 
 group :doc do
