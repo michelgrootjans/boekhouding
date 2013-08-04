@@ -1,0 +1,8 @@
+%h1 Uitgaande facturen
+
+.factuur
+  - @facturen.each do |factuur|
+    = "#{factuur.ontvanger}: #{factuur.bedrag}"
+
+
+= link_to "Nieuwe factuur ...", new_factuur_path
